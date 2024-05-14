@@ -1,0 +1,31 @@
+{
+  "name": "billd-live-server-ts",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development NODE_APP_RELEASE_PROJECT_NAME=billd-live-server-ts NODE_APP_RELEASE_PROJECT_ENV=development NODE_APP_RELEASE_PROJECT_PORT=4300 nodemon --exec node -r @swc-node/register ./src/index.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@swc-node/register": "^1.9.1",
+    "@types/koa": "^2.15.0",
+    "@types/koa-router": "^7.4.8",
+    "@types/node": "^20.12.10",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "billd-utils": "^0.0.22",
+    "chalk": "^4.1.2",
+    "jsonwebtoken": "^9.0.2",
+    "koa": "^2.15.3",
+    "koa-body": "^6.0.1",
+    "koa-bodyparser": "^4.4.1",
+    "koa-router": "^12.0.1",
+    "mysql2": "2.3.3",
+    "node-emoji": "^2.1.3",
+    "sequelize": "6.32.1"
+  }
+}
