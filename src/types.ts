@@ -11,15 +11,56 @@ export enum UserIsTouristEnum {
   no,
 }
 
+export enum UserIsRobotEnum {
+  yes,
+  no,
+}
+
+export enum UserCanMsgEnum {
+  yes,
+  no,
+}
+
+export enum UserCanWatchLiveEnum {
+  yes,
+  no,
+}
+
+export enum UserIsKickEnum {
+  yes,
+  no,
+}
+
 export interface IUser {
   id?: number
+  // 用户名称
   username?: string
+  // 密码
   password?: string
+  // 状态 "正常|禁用"
   status?: UserStatusEnum
+  // 头像
   avatar?: string
+  // 描述信息
   desc?: string
+  // 令牌
   token?: string
+  // 是否是游客
   is_tourist?: UserIsTouristEnum
+  // 用户是否是机器人
+  is_robot?: UserIsRobotEnum
+  // 用户能否发消息
+  can_msg?: UserCanMsgEnum
+  // 用户能否在线观看
+  can_watch_live?: UserCanWatchLiveEnum
+  // 用户是否被踢
+  is_lick?: UserIsKickEnum
+  // 备注
+  remark?: string
+  // 批量创建用户
+  batch_create_user?: IUser[]
+
+  // TODO
 }
 
 export interface IInitUser extends IUser {
@@ -104,11 +145,37 @@ export type IList<T> = {
 } & T
 
 export type IResponseType<T> = {
-  nowPage: number,
-  pageSize: number,
-  hasMore: boolean,
-  total: number,
+  nowPage: number
+  pageSize: number
+  hasMore: boolean
+  total: number
   rows: T[]
+}
+
+export enum GoodsTypeEnum {
+  support = "support",
+  sponsor = "sponsor",
+  gift = "gift",
+  recharge = "recharge", // 充值
+}
+
+// 商品数据模型
+export interface IGoods {
+  id: number
+  type?: GoodsTypeEnum // 商品类型
+  name?: string
+  desc?: string
+  short_desc?: string
+  cover?: string
+  price?: number
+  original_price?: number
+  nums?: number
+  badge?: string
+  badge_bg?: string
+  remark?: string
+  created_at?: string
+  updated_at?: string
+  deleted_at?: string
 }
 
 export type KoaNextType = () => Promise<any>

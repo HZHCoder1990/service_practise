@@ -24,5 +24,3 @@ Area.belongsToMany(LiveRoom, {
     unique: false,
   },
 })
-
-

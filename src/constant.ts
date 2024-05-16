@@ -28,3 +28,40 @@ export const COMMON_SUCCESS_MSG = {
   PUT: "修改成功！",
   DELETE: "删除成功！",
 }
+
+// 角色信息
+export const DEFAULT_ROLE_INFO = {
+  ALL_ROLE: {
+    id: 1,
+    role_value: "ALL_ROLE",
+  },
+  ADMIN: {
+    id: 2,
+    role_value: "ADMIN",
+  },
+  // 超级管理员
+  SUPER_ADMIN: {
+    id: 3,
+    role_value: "SUPER_ADMIN",
+  },
+  LIVE_ADMIN: {
+    id: 4,
+    role_value: "LIVE_ADMIN",
+  },
+  USER: {
+    id: 5,
+    role_value: "USER",
+  },
+  VIP_USER: {
+    id: 6,
+    role_value: "VIP_USER",
+  },
+  SVIP_USER: {
+    id: 7,
+    role_value: "SVIP_USER",
+  },
+  TOURIST_USER: {
+    id: 8,
+    role_value: "TOURIST_USER",
+  },
+}

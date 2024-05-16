@@ -118,7 +118,7 @@ class AreaService {
       ],
     })
 
-    console.log(result)
+    return handlePaging(result, nowPage, pageSize)
   }
 }
 

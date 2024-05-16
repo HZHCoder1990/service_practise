@@ -1,9 +1,7 @@
 import successHandler from "@/app/handler/success-handler"
 import areaService from "@/service/area.service"
 import { IArea, IList, KoaNextType } from "@/types"
-import { log } from "console"
 import { ParameterizedContext } from "koa"
-import { now } from "sequelize/types/utils"
 
 class AreaController {
   // 类里面不能使用 const 来定义箭头函数
@@ -57,13 +55,15 @@ class AreaController {
       pageSize,
     }: IList<IArea> = queryData
 
-     await areaService.getLiveRoomList({
+    const result = await areaService.getLiveRoomList({
       area_id: id,
       live_room_is_show,
       live_room_status,
       nowPage,
       pageSize,
     })
+    successHandler({ctx, data: result})
+    await next()
   }
 }
 

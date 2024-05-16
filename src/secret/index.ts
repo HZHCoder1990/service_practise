@@ -17,7 +17,7 @@ export interface MySQLConfig {
 
 export const MYSQL_CONFIG: MySQLConfig = {
   database:
-    PROJECT_ENV === PROJECT_ENV_ENUM.development ? "coderhub_db4" : "****",
+    PROJECT_ENV === PROJECT_ENV_ENUM.development ? "coderhub_db" : "****",
   host: PROJECT_ENV === PROJECT_ENV_ENUM.development ? "127.0.0.1" : "****",
   port: 3306,
   username: "root",

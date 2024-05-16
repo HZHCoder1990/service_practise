@@ -3,6 +3,7 @@ import Koa from "koa"
 import Router from "koa-router"
 
 import areaRouter from "@/router/area.router"
+import goodsRouter from "./goods.router"
 
 // 一旦执行文件内的代码，从上到下进行加载执行
 
@@ -25,4 +26,7 @@ export const loadAllRouters = (app: Koa) => {
 
   // area路由
   app.use(areaRouter.routes()).use(areaRouter.allowedMethods())
+
+  // goods商品路由
+  app.use(goodsRouter.routes()).use(goodsRouter.allowedMethods())
 }

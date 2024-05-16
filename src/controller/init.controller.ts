@@ -34,9 +34,10 @@ const initUser = () => {
         password: "12345678", // 先写死
         token,
       })
+      // TODO 用户和角色关联
     } else {
       console.log("用户已经存在")
-
+      return
     }
 
     // 用户关联的直播间是否存在
@@ -44,11 +45,13 @@ const initUser = () => {
     const liveRoomIsExist = await liveRoomService.isExist([user.live_room.id])
     if (!liveRoomIsExist) {
       // 写入数据库
-      const liveRoom = await liveRoomModel.create({
+      const liveRoom: any = await liveRoomModel.create({
         id: user.live_room?.id,
         name: user.live_room?.name,
         desc: user.live_room?.desc,
       })
+      // 给中间表赋值
+      await liveRoom.setAreas(user.live_room?.area)
     } else {
       console.log("用户的直播间已经存在")
     }
